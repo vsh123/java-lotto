@@ -182,14 +182,14 @@ public class LottoGame {
 
         do {
             System.out.println("구입 금액을 입력해 주세요.");
-            purchaseAmount = scanner.nextLine();
+            purchaseAmount = scanner.nextLine().trim();
         } while (!checkNumber(purchaseAmount) || !checkRightPurchaseAmount(purchaseAmount));
         return Integer.parseInt(purchaseAmount);
     }
 
     private boolean checkNumber(String userInput) {
         try {
-            Integer.parseInt(userInput.trim());
+            Integer.parseInt(userInput);
         } catch (NumberFormatException e) {
             System.out.println("[" + userInput + "]는 숫자가 아닙니다. 숫자를 입력해 주세요.");
             return false;
